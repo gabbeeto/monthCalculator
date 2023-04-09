@@ -152,3 +152,9 @@ border: 2px solid black;
 text-stroke: 0px;
 -webkit-text-stroke: 0px;
 }
+
+#finishButton:hover{
+
+background-color: #253840;
+
+}
