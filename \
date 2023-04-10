@@ -1,0 +1,27 @@
+
+function addButtonFunction() {
+alert("this works!");
+let nameFood = document.getElementById('nameFood');
+let priceFood = document.getElementById('priceFood');
+let nameFood = document.getElementById('AmountPerPrice');
+let nameFood = document.getElementById('daysPerMonth');
+let foodPerDay = document.getElementById('foodPerDay');
+}
+
+function editButtonFunction() {
+alert('this works!');
+}
+
+
+function deleteButtonFunction(){
+alert('this works!');
+}
+
+
+let addButton = document.getElementById('addButton');
+let editButton = document.getElementById('editButton');
+let deleteButton = document.getElementById('deleteButton');
+
+addButton.addEventListener('click',addButtonFunction);
+editButton.addEventListener('click',editButtonFunction);
+deleteButton.addEventListener('click',deleteButtonFunction);
