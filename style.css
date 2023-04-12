@@ -37,6 +37,13 @@ height: 40px;
 }
 
 
+#finishButtonDiv{
+font-weight:bold ;
+font-size: 2.2rem;
+text-stroke:0.5px;
+margin-left: auto;
+}
+
 /*buttons from the left*/
 
 #leftMenu
@@ -52,12 +59,12 @@ border-radius: 1000px;
 box-shadow:5px 5px 20px black;
 }
 
-#addButton:hover, #editButton:hover, #deleteButton:hover
+#finishButton:hover, #editButton:hover, #deleteButton:hover
 {
 cursor: pointer; 
 }
 
-#addButton:hover
+#finishButton:hover
 {
 content: url('images/addButtonHover.png');
 }
@@ -139,22 +146,23 @@ padding: 80px;
 
 /*Finish button from the bottom of the page*/
 
-#finishButton{
+.addButton{
 grid-column-start:1 ;
 grid-column-end: -1;
 align-self: center;
 justify-self: center;
+margin-top: 20px;
 border-radius: 5px;
 box-shadow: 5px 5px 10px;
 width: 90%;
-background-color: #39535E;
+background-color: #578A9F;
 border: 2px solid black;
 text-stroke: 0px;
 -webkit-text-stroke: 0px;
 }
 
-#finishButton:hover{
+.addButton:hover{
 
-background-color: #253840;
+background-color: #15313D;
 
 }

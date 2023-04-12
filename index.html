@@ -13,7 +13,7 @@
 	</div>	
 	<div id="mainContainer">
 		<div id="leftMenu">
-			<img id="addButton" src="images/addButton.png" alt="Add Button">
+			<img id="finishButton" src="images/addButton.png" alt="Add Button">
 			<img id="editButton" src="images/editButton.png" alt="Edit Button">
 			<img id="deleteButton" src="images/deleteButton.png" alt="Delete Button">
 		</div>
@@ -31,6 +31,7 @@
 			<input id="daysPerMonth" placeholder="7 days everymonth">
 			<h3> how much of that food do you eat per day:</h3>
 			<input id="foodPerDay" placeholder="1 banana a day">
+			<button id="addButton" class="addButton">done</button>
 			</div>
 		</div>
 
@@ -39,9 +40,10 @@
 			<div class="toCenterItems">
 			<h2>Product calculator:</h2>
 			<h3>what's the name of the product</h3>
-			<input placeholder="broom">
+			<input id="productName" placeholder="broom">
 			<h3>what's the price of the product</h3>
-			<input placeholder="2$">
+			<input id="productPrice" placeholder="2$">
+			<button id="addButton2" class="addButton">done</button>
 		  </div>
 		</div>
 
@@ -49,11 +51,12 @@
 			<div class="toCenterItems">
 			<h2>Extra spendings:</h2>
 			<h3>extra money:</h3>
-			<input placeholder="300$ on other spendings">
+			<input id="extraMoney" placeholder="300$ on other spendings">
+
+			<button id="addButton3" class="addButton">done</button>
 			</div>
 		</div>
 </div>
-		<button id="finishButton">finish </button>
 	</div>
 	<script src="math.js"></script>
 </body>
