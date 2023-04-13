@@ -10,8 +10,18 @@ let extraNumberContainerIndex = 0;
 let finishButtonDiv;
 let finishbuttonParagraph;
 let finishButtonDivCreated = false;
+let popUpCreated = false;
+let popUp;
+let popUpFoodId;
+let popUpProductId;
+let popUpExtraId;
+let popUpParagraph;
+
+let popUpDoneButtton;
 
 function finishButtonFunction(){
+if(!popUpCreated)
+{
 
 let calculationPerIndex = [];
 let finalCalculation = 0;
@@ -64,6 +74,8 @@ finishbuttonParagraph.innerHTML = "Result: " + Math.floor(finalCalculation) + '$
 }
 
 
+
+}
 }
 
 
@@ -75,6 +87,9 @@ finishbuttonParagraph.innerHTML = "Result: " + Math.floor(finalCalculation) + '$
 
 
 function addButtonFunction() {
+if(!popUpCreated)
+{
+
 //get the input from the html
 let nameFood = document.getElementById('nameFood');
 let priceFood = document.getElementById('priceFood');
@@ -98,11 +113,52 @@ foodNumberContainer[foodNumberContainerIndex] = {name: nameFoodValue, price: pri
 
 
 
-alert(foodNumberContainer[foodNumberContainerIndex].name + ' was added!.');
+
+popUp = document.createElement('div');
+popUp.setAttribute('class', 'popUp');
+popUp.setAttribute('id', 'foodPopUp');
+
+
+popUpParagraph = document.createElement('p');
+popUpParagraph.innerHTML = foodNumberContainer[foodNumberContainerIndex].name + ' was added!.';
+
+popUpDoneButtton = document.createElement('button');
+popUpDoneButtton.textContent = 'DONE';
+popUpDoneButtton.setAttribute('id', 'popUpDoneButtton');
+
+
+
+
+
+
+function popUpDoneButttonFunction(){
+popUpCreated = false;
+popUpFoodId = document.getElementById('foodPopUp');
+popUpFoodId.parentElement.removeChild(popUpFoodId);
+}
+
+
+popUpCreated = true;
+
+mainContainer = document.getElementById('mainContainer');
+
+mainContainer.appendChild(popUp);
+popUp.appendChild(popUpParagraph);
+popUp.appendChild(popUpDoneButtton);
+
+popUpDoneButtton.addEventListener('click', popUpDoneButttonFunction);
+
+
+
+
+
 
 
 //this works as a index so the value is not being repeated 
 foodNumberContainerIndex += 1;
+
+
+}
 
 }
 
@@ -114,7 +170,12 @@ foodNumberContainerIndex += 1;
 
 
 
+
+
 function addButtonFunction2() {
+if(!popUpCreated)	
+	{
+
 //get the input from the html
 let productName = document.getElementById('productName');
 let priceProduct = document.getElementById('productPrice');
@@ -132,11 +193,53 @@ productNumberContainer[productNumberContainerIndex] = {name: productNameValue, p
 
 
 
-alert(productNumberContainer[productNumberContainerIndex].name + ' was added!.');
+
+
+
+
+popUp = document.createElement('div');
+popUp.setAttribute('class', 'popUp');
+popUp.setAttribute('id', 'productPopUp');
+
+
+popUpParagraph = document.createElement('p');
+popUpParagraph.innerHTML = productNumberContainer[productNumberContainerIndex].name + ' was added!.';
+
+popUpDoneButtton = document.createElement('button');
+popUpDoneButtton.textContent = 'DONE';
+popUpDoneButtton.setAttribute('id', 'popUpDoneButtton');
+
+
+
+
+
+
+function popUpDoneButttonFunction(){
+popUpCreated = false;
+popUpProductId = document.getElementById('productPopUp');
+popUpProductId.parentElement.removeChild(popUpProductId);
+}
+
+
+popUpCreated = true;
+
+mainContainer = document.getElementById('mainContainer');
+
+mainContainer.appendChild(popUp);
+popUp.appendChild(popUpParagraph);
+popUp.appendChild(popUpDoneButtton);
+
+popUpDoneButtton.addEventListener('click', popUpDoneButttonFunction);
+
+
+
 
 
 //this works as a index so the value is not being repeated 
 productNumberContainerIndex += 1;
+
+
+	}
 
 }
 
@@ -149,6 +252,8 @@ productNumberContainerIndex += 1;
 
 
 function addButtonFunction3() {
+	{
+
 //get the input from the html
 let extraMoney = document.getElementById('extraMoney');
 
@@ -164,11 +269,53 @@ extraNumberContainer[extraNumberContainerIndex] = {price: extraMoneyValue};
 
 
 
-alert(extraNumberContainer[extraNumberContainerIndex].price + ' was added!.');
+
+
+
+
+popUp = document.createElement('div');
+popUp.setAttribute('class', 'popUp');
+popUp.setAttribute('id', 'extraPopUp');
+
+
+popUpParagraph = document.createElement('p');
+popUpParagraph.innerHTML = extraNumberContainer[extraNumberContainerIndex].price + ' was added!.';
+
+popUpDoneButtton = document.createElement('button');
+popUpDoneButtton.textContent = 'DONE';
+popUpDoneButtton.setAttribute('id', 'popUpDoneButtton');
+
+
+
+
+
+
+function popUpDoneButttonFunction(){
+popUpCreated = false;
+popUpExtraId = document.getElementById('extraPopUp');
+popUpExtraId.parentElement.removeChild(popUpExtraId);
+}
+
+
+popUpCreated = true;
+
+mainContainer = document.getElementById('mainContainer');
+
+mainContainer.appendChild(popUp);
+popUp.appendChild(popUpParagraph);
+popUp.appendChild(popUpDoneButtton);
+
+popUpDoneButtton.addEventListener('click', popUpDoneButttonFunction);
 
 
 //this works as a index so the value is not being repeated 
 extraNumberContainerIndex += 1;
+
+
+
+	}	
+
+
 
 }
 
@@ -181,12 +328,20 @@ extraNumberContainerIndex += 1;
 
 
 function editButtonFunction() {
+if(!popUpCreated)
+{
+
 alert('this works!');
+}
+
 }
 
 
 function deleteButtonFunction(){
+if(!popUpCreated)
+{
 alert('this works!');
+}
 }
 
 

@@ -9,7 +9,13 @@ box-sizing: border-box;
 
 @font-face{
 font-family: 'singkong';
-src: url("Singkong.ttf");
+src: url("fonts/Singkong.ttf");
+}
+
+
+@font-face{
+font-family: 'sherman';
+src: url("fonts/Sherman.ttf");
 }
 
 body{
@@ -164,5 +170,44 @@ text-stroke: 0px;
 .addButton:hover{
 
 background-color: #15313D;
+cursor: pointer;
+}
 
+
+/*popUp Section:*/
+
+.popUp{
+width: 40%;
+height: 40%;
+align-self: center;
+justify-self: center;
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+font-family: 'sherman';
+background-color: #203640;
+z-index: 3;
+font-size: 7rem;
+border-radius: 10px;
+border: 2px solid black;
+box-shadow: 10px 10px 550px 550px black;
+}
+
+.popUp button {
+width: 70%;
+border: 3px solid black;
+height: 45%;
+font-size: 7rem;
+background-color: #3A6478;
+font-family: 'sherman';
+border-radius: 10px;
+/*position: fixed;*/
+/*z-index: 3;*/
+}
+
+.popUp:hover button {
+background-color: #1C5A78;
+cursor: pointer;
 }
