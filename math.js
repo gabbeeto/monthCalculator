@@ -1,6 +1,6 @@
 //variables for functions so it can be accessed outside of the scope
 
-
+let mainContainer;
 let foodNumberContainer = [];
 let foodNumberContainerIndex = 0;
 let productNumberContainer = [];
@@ -10,7 +10,11 @@ let extraNumberContainerIndex = 0;
 let finishButtonDiv;
 let finishbuttonParagraph;
 let finishButtonDivCreated = false;
+
+
+// the PopUpCreated Variable turns off the functionality of other functions with an if statement when it is created because it ise set to true and the if statement only allow to run the code when this variable is set to false
 let popUpCreated = false;
+
 let popUp;
 let popUpFoodId;
 let popUpProductId;
@@ -19,7 +23,17 @@ let popUpParagraph;
 
 let popUpDoneButtton;
 
+
+let editContainer;
+let exitButton;
+let editContainerDoneButton;
+let foodContainer;
+let productContainer;
+let extraContainer;
+
+
 function finishButtonFunction(){
+
 if(!popUpCreated)
 {
 
@@ -114,6 +128,9 @@ foodNumberContainer[foodNumberContainerIndex] = {name: nameFoodValue, price: pri
 
 
 
+
+
+// pop up sign that shows that the products/foods/ were added to the calculation
 popUp = document.createElement('div');
 popUp.setAttribute('class', 'popUp');
 popUp.setAttribute('id', 'foodPopUp');
@@ -132,12 +149,13 @@ popUpDoneButtton.setAttribute('id', 'popUpDoneButtton');
 
 
 function popUpDoneButttonFunction(){
+//this is set back to false when you close the div
 popUpCreated = false;
 popUpFoodId = document.getElementById('foodPopUp');
 popUpFoodId.parentElement.removeChild(popUpFoodId);
 }
 
-
+// this prevents other elements from functioning
 popUpCreated = true;
 
 mainContainer = document.getElementById('mainContainer');
@@ -193,9 +211,7 @@ productNumberContainer[productNumberContainerIndex] = {name: productNameValue, p
 
 
 
-
-
-
+// pop up sign that shows that the products/foods/ were added to the calculation
 
 popUp = document.createElement('div');
 popUp.setAttribute('class', 'popUp');
@@ -215,12 +231,13 @@ popUpDoneButtton.setAttribute('id', 'popUpDoneButtton');
 
 
 function popUpDoneButttonFunction(){
+//this is set back to false when you close the div
 popUpCreated = false;
 popUpProductId = document.getElementById('productPopUp');
 popUpProductId.parentElement.removeChild(popUpProductId);
 }
 
-
+// this prevents other elements from functioning
 popUpCreated = true;
 
 mainContainer = document.getElementById('mainContainer');
@@ -271,7 +288,7 @@ extraNumberContainer[extraNumberContainerIndex] = {price: extraMoneyValue};
 
 
 
-
+// pop up sign that shows that the products/foods/ were added to the calculation
 
 popUp = document.createElement('div');
 popUp.setAttribute('class', 'popUp');
@@ -291,12 +308,13 @@ popUpDoneButtton.setAttribute('id', 'popUpDoneButtton');
 
 
 function popUpDoneButttonFunction(){
+//this is set back to false when you close the div
 popUpCreated = false;
 popUpExtraId = document.getElementById('extraPopUp');
 popUpExtraId.parentElement.removeChild(popUpExtraId);
 }
 
-
+// this prevents other elements from functioning
 popUpCreated = true;
 
 mainContainer = document.getElementById('mainContainer');
@@ -327,9 +345,143 @@ extraNumberContainerIndex += 1;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function editButtonFunction() {
 if(!popUpCreated)
 {
+
+mainContainer = document.getElementById('mainContainer');
+
+editContainer = document.createElement('div');
+editContainer.setAttribute('id','editContainer');
+editContainer.setAttribute('class','extraContainer');
+
+buttonContainer = document.createElement('div');
+buttonContainer.setAttribute('id','buttonContainer');
+
+
+
+exitButton = document.createElement('button');
+exitButton.setAttribute('id','exitButton');
+exitButton.textContent = 'exit';
+
+gridContainerForTheEditContainer = document.createElement('div');
+gridContainerForTheEditContainer.setAttribute('id','gridContainer');
+
+
+foodContainer = document.createElement('div');
+foodContainer.setAttribute('id','gFoodContainer');
+
+
+productContainer = document.createElement('div');
+productContainer.setAttribute('id','gProductContainer');
+
+
+extraContainer = document.createElement('div');
+extraContainer.setAttribute('id','gExtraContainer');
+
+
+
+editContainerDoneButton = document.createElement('button');
+editContainerDoneButton.setAttribute('id','editContainerDoneButton');
+editContainerDoneButton.textContent = 'Done';
+
+
+
+
+mainContainer.appendChild(editContainer);
+editContainer.appendChild(buttonContainer);
+buttonContainer.appendChild(exitButton);
+buttonContainer.appendChild(editContainerDoneButton);
+editContainer.appendChild(gridContainerForTheEditContainer);
+gridContainerForTheEditContainer.appendChild(foodContainer);
+gridContainerForTheEditContainer.appendChild(productContainer);
+gridContainerForTheEditContainer.appendChild(extraContainer);
+
+
+
+// loop for food container items so it appears on the edit button
+
+for(let index = 0;index < foodNumberContainer.length; index++)
+{
+editFoodNameText = 	document.createElement('p');
+editFoodNameText.textContent = 'Name: '
+
+
+editFoodName = document.createElement('input');
+editFoodName.setAttribute('placeholder', foodNumberContainer[index].name);
+ 
+
+
+editFoodPriceText = 	document.createElement('p');
+editFoodPriceText.textContent = 'Price: '
+
+
+editFoodPrice = document.createElement('input');
+editFoodPrice.setAttribute('placeholder', foodNumberContainer[index].price);
+ 
+
+
+
+editFoodAmountPerPriceText = document.createElement('p');
+editFoodAmountPerPriceText.textContent = 'Amount Per Price: ';
+
+
+editFoodAmountPerPrice = document.createElement('input');
+editFoodAmountPerPrice.setAttribute('placeholder', foodNumberContainer[index].amountPerPrice);
+
+
+
+editFoodDaysPerMonthText = document.createElement('p');
+editFoodDaysPerMonthText.textContent = 'Days Per Month: ';
+
+
+editFoodDaysPerMonth = document.createElement('input');
+editFoodDaysPerMonth.setAttribute('placeholder', foodNumberContainer[index].daysPerMonth);
+
+
+editFoodFoodPerDayText = document.createElement('p');
+editFoodFoodPerDayText.textContent = 'Food Per Day: ';
+
+
+editFoodFoodPerDay = document.createElement('input');
+editFoodFoodPerDay.setAttribute('placeholder', foodNumberContainer[index].foodPerDay);
+
+
+foodContainer.appendChild(editFoodNameText);
+foodContainer.appendChild(editFoodName);
+foodContainer.appendChild(editFoodPriceText);
+foodContainer.appendChild(editFoodPrice);
+foodContainer.appendChild(editFoodAmountPerPriceText);
+foodContainer.appendChild(editFoodAmountPerPrice);
+foodContainer.appendChild(editFoodDaysPerMonthText);
+foodContainer.appendChild(editFoodDaysPerMonth);
+foodContainer.appendChild(editFoodFoodPerDayText);
+foodContainer.appendChild(editFoodFoodPerDay);
+
+
+
+
+
+}
+
 
 alert('this works!');
 }

@@ -177,32 +177,35 @@ cursor: pointer;
 /*popUp Section:*/
 
 .popUp{
-width: 40%;
-height: 40%;
+width: 30%;
+height: 30%;
 align-self: center;
 justify-self: center;
 position: fixed;
 display: flex;
+min-width: 480px;
+min-height: 250px;
 justify-content: center;
 align-items: center;
 flex-direction: column;
 font-family: 'sherman';
 background-color: #203640;
 z-index: 3;
-font-size: 7rem;
+font-size: 3rem;
 border-radius: 10px;
 border: 2px solid black;
 box-shadow: 10px 10px 550px 550px black;
 }
 
 .popUp button {
-width: 70%;
+width: 40%;
 border: 3px solid black;
-height: 45%;
-font-size: 7rem;
+height: 40%;
+font-size: 5rem;
 background-color: #3A6478;
 font-family: 'sherman';
 border-radius: 10px;
+text-align: center;
 /*position: fixed;*/
 /*z-index: 3;*/
 }
@@ -211,3 +214,62 @@ border-radius: 10px;
 background-color: #1C5A78;
 cursor: pointer;
 }
+
+
+
+
+/*editButton section*/
+
+.extraContainer
+{
+width: 92%;
+height: 92%;
+align-self: center;
+display: flex;
+flex-direction: column;
+justify-self: center;
+z-index: 3;
+position: fixed;
+background-color: aquamarine;
+border: 1px solid black;
+border-radius: 10px;
+box-shadow: 5px 5px 100px 40px black;
+}
+
+#buttonContainer{
+display: flex;
+justify-content: center;
+gap: 10px;
+}
+
+
+#buttonContainer button{
+margin-top: 10px;
+padding: 15px 20px;
+font-size: 20px;
+font-family: 'sherman' ;
+}
+
+#gridContainer {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+width:100%;
+height:100%;
+}
+
+
+#gFoodContainer, #gProductContainer {
+border-right: 2px solid black;
+}
+
+
+#gFoodContainer, #gProductContainer, #gExtraContainer {
+border-top: 2px solid black;
+display: flex;
+height: 90%;
+flex-direction: column;
+align-items: center;
+overflow: auto;
+}
+
+
