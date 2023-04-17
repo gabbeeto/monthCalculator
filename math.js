@@ -2,6 +2,7 @@
 
 let mainContainer;
 let foodNumberContainer = [];
+let foodNumberContainer2 = [];
 let foodNumberContainerIndex = 0;
 let productNumberContainer = [];
 let productNumberContainerIndex = 0;
@@ -30,6 +31,9 @@ let editContainerDoneButton;
 let foodContainer;
 let productContainer;
 let extraContainer;
+
+
+let foodBackground;
 
 
 function finishButtonFunction(){
@@ -417,26 +421,109 @@ gridContainerForTheEditContainer.appendChild(extraContainer);
 
 
 
+function exitButtonFunction() {
+editContainer.parentElement.removeChild(editContainer);
+
+}
+
+
+
+function popUpDoneButttonFunction() {
+for(let index = 0; index < foodNumberContainer.length; index++)
+{
+
+foodNumberContainer2[index] ={name:'' , price: '',amountPerPrice:'',daysPerMonth: '',foodPerDay: ''};
+	if(document.getElementById('foodN' + index).value)
+{
+foodNumberContainer2[index].name =document.getElementById('foodN' + index).value;
+}
+else
+{
+foodNumberContainer2[index].name =document.getElementById('foodN' + index).placeholder;
+}
+
+
+if(document.getElementById('foodP' + index).value)
+{
+foodNumberContainer2[index].price =document.getElementById('foodP' + index).value;
+}
+else
+{
+foodNumberContainer2[index].price =document.getElementById('foodP' + index).placeholder;
+}
+
+
+if(document.getElementById('foodAPP' + index).value)
+{
+foodNumberContainer2[index].amountPerPrice =document.getElementById('foodAPP' + index).value;
+}
+else
+{
+foodNumberContainer2[index].amountPerPrice =document.getElementById('foodAPP' + index).placeholder;
+}
+
+
+if(document.getElementById('foodDPM' + index).value)
+{
+foodNumberContainer2[index].foodPerDay =document.getElementById('foodDPM' + index).value;
+}
+else
+{
+foodNumberContainer2[index].foodPerDay =document.getElementById('foodDPM' + index).placeholder;
+}
+
+
+if(document.getElementById('foodFPD' + index).value)
+{
+foodNumberContainer2[index].daysPerMonth =document.getElementById('foodFPD' + index).value;
+}
+else
+{
+foodNumberContainer2[index].daysPerMonth =document.getElementById('foodFPD' + index).placeholder;
+}
+
+
+}
+
+foodNumberContainer = foodNumberContainer2
+foodNumberContainer2 = [];
+
+editContainer.parentElement.removeChild(editContainer);
+
+}
+
+
+
+
+
 // loop for food container items so it appears on the edit button
 
 for(let index = 0;index < foodNumberContainer.length; index++)
 {
+
+foodBackground = document.createElement('div');
+foodBackground.setAttribute('class','foodBackground');
+
+
+
 editFoodNameText = 	document.createElement('p');
-editFoodNameText.textContent = 'Name: '
+editFoodNameText.setAttribute('class','FoodNameText');
+editFoodNameText.textContent = 'Name: ';
 
 
 editFoodName = document.createElement('input');
 editFoodName.setAttribute('placeholder', foodNumberContainer[index].name);
+editFoodName.setAttribute('id','foodN' + index );
  
 
 
 editFoodPriceText = 	document.createElement('p');
-editFoodPriceText.textContent = 'Price: '
+editFoodPriceText.textContent = 'Price: ';
 
 
 editFoodPrice = document.createElement('input');
 editFoodPrice.setAttribute('placeholder', foodNumberContainer[index].price);
- 
+editFoodPrice.setAttribute('id','foodP' + index );
 
 
 
@@ -446,7 +533,7 @@ editFoodAmountPerPriceText.textContent = 'Amount Per Price: ';
 
 editFoodAmountPerPrice = document.createElement('input');
 editFoodAmountPerPrice.setAttribute('placeholder', foodNumberContainer[index].amountPerPrice);
-
+editFoodAmountPerPrice.setAttribute('id','foodAPP' + index);
 
 
 editFoodDaysPerMonthText = document.createElement('p');
@@ -455,7 +542,7 @@ editFoodDaysPerMonthText.textContent = 'Days Per Month: ';
 
 editFoodDaysPerMonth = document.createElement('input');
 editFoodDaysPerMonth.setAttribute('placeholder', foodNumberContainer[index].daysPerMonth);
-
+editFoodDaysPerMonth.setAttribute('id','foodDPM' + index);
 
 editFoodFoodPerDayText = document.createElement('p');
 editFoodFoodPerDayText.textContent = 'Food Per Day: ';
@@ -463,22 +550,23 @@ editFoodFoodPerDayText.textContent = 'Food Per Day: ';
 
 editFoodFoodPerDay = document.createElement('input');
 editFoodFoodPerDay.setAttribute('placeholder', foodNumberContainer[index].foodPerDay);
+editFoodFoodPerDay.setAttribute('id','foodFPD' + index);
 
 
-foodContainer.appendChild(editFoodNameText);
-foodContainer.appendChild(editFoodName);
-foodContainer.appendChild(editFoodPriceText);
-foodContainer.appendChild(editFoodPrice);
-foodContainer.appendChild(editFoodAmountPerPriceText);
-foodContainer.appendChild(editFoodAmountPerPrice);
-foodContainer.appendChild(editFoodDaysPerMonthText);
-foodContainer.appendChild(editFoodDaysPerMonth);
-foodContainer.appendChild(editFoodFoodPerDayText);
-foodContainer.appendChild(editFoodFoodPerDay);
+foodContainer.appendChild(foodBackground);
+foodBackground.appendChild(editFoodNameText);
+foodBackground.appendChild(editFoodName);
+foodBackground.appendChild(editFoodPriceText);
+foodBackground.appendChild(editFoodPrice);
+foodBackground.appendChild(editFoodAmountPerPriceText);
+foodBackground.appendChild(editFoodAmountPerPrice);
+foodBackground.appendChild(editFoodDaysPerMonthText);
+foodBackground.appendChild(editFoodDaysPerMonth);
+foodBackground.appendChild(editFoodFoodPerDayText);
+foodBackground.appendChild(editFoodFoodPerDay);
 
-
-
-
+exitButton.addEventListener('click', exitButtonFunction);
+editContainerDoneButton.addEventListener('click', popUpDoneButttonFunction)
 
 }
 

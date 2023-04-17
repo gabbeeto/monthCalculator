@@ -266,10 +266,25 @@ border-right: 2px solid black;
 #gFoodContainer, #gProductContainer, #gExtraContainer {
 border-top: 2px solid black;
 display: flex;
-height: 90%;
+height: 100%;
 flex-direction: column;
 align-items: center;
 overflow: auto;
 }
 
 
+.foodBackground, .productBackground, .ExtraBackground{
+background-color: darkcyan;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+/*height: 100%;*/
+margin-bottom: 69px;
+padding: 10px 0px;
+}
+
+
+/*.FoodNameText{*/
+/*}*/
