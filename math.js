@@ -5,8 +5,10 @@ let foodNumberContainer = [];
 let foodNumberContainer2 = [];
 let foodNumberContainerIndex = 0;
 let productNumberContainer = [];
+let productNumberContainer2 = [];
 let productNumberContainerIndex = 0;
 let extraNumberContainer = [];
+let extraNumberContainer2 = [];
 let extraNumberContainerIndex = 0;
 let finishButtonDiv;
 let finishbuttonParagraph;
@@ -370,7 +372,7 @@ extraNumberContainerIndex += 1;
 function editButtonFunction() {
 if(!popUpCreated)
 {
-
+popUpCreated = true;
 mainContainer = document.getElementById('mainContainer');
 
 editContainer = document.createElement('div');
@@ -423,7 +425,7 @@ gridContainerForTheEditContainer.appendChild(extraContainer);
 
 function exitButtonFunction() {
 editContainer.parentElement.removeChild(editContainer);
-
+popUpCreated = false;
 }
 
 
@@ -485,9 +487,69 @@ foodNumberContainer2[index].daysPerMonth =document.getElementById('foodFPD' + in
 
 }
 
+
+
+for(let index = 0; index < productNumberContainer.length; index++)
+{
+
+productNumberContainer2[index] ={name:'' , price: ''};
+	if(document.getElementById('productN' + index).value)
+{
+productNumberContainer2[index].name =document.getElementById('productN' + index).value;
+}
+else
+{
+productNumberContainer2[index].name =document.getElementById('productN' + index).placeholder;
+}
+
+
+if(document.getElementById('productP' + index).value)
+{
+productNumberContainer2[index].price =document.getElementById('productP' + index).value;
+}
+else
+{
+productNumberContainer2[index].price =document.getElementById('productP' + index).placeholder;
+}
+
+
+
+}
+
+
+
+for(let index = 0; index < extraNumberContainer.length; index++)
+{
+
+extraNumberContainer2[index] ={price: ''};
+if(document.getElementById('extraP' + index).value)
+{
+extraNumberContainer2[index].price =document.getElementById('extraP' + index).value;
+}
+else
+{
+extraNumberContainer2[index].price =document.getElementById('extraP' + index).placeholder;
+}
+
+
+
+}
+
+
+
+
 foodNumberContainer = foodNumberContainer2
 foodNumberContainer2 = [];
 
+
+productNumberContainer = productNumberContainer2
+productNumberContainer2 = [];
+
+
+extraNumberContainer = extraNumberContainer2
+extraNumberContainer2 = [];
+
+popUpCreated = false;
 editContainer.parentElement.removeChild(editContainer);
 
 }
@@ -496,25 +558,25 @@ editContainer.parentElement.removeChild(editContainer);
 
 
 
-// loop for food container items so it appears on the edit button
+// loop for food container items so it appears on the div created when you press the edit icon 
 
 for(let index = 0;index < foodNumberContainer.length; index++)
 {
 
+//the background div was made so all the items can be distinguished from one food to the other 
 foodBackground = document.createElement('div');
 foodBackground.setAttribute('class','foodBackground');
 
 
 
 editFoodNameText = 	document.createElement('p');
-editFoodNameText.setAttribute('class','FoodNameText');
 editFoodNameText.textContent = 'Name: ';
 
 
 editFoodName = document.createElement('input');
 editFoodName.setAttribute('placeholder', foodNumberContainer[index].name);
 editFoodName.setAttribute('id','foodN' + index );
- 
+//all the id's in this for loop is made so the program can replace the array with the value of the placeholder changed when they press the done button 
 
 
 editFoodPriceText = 	document.createElement('p');
@@ -564,12 +626,82 @@ foodBackground.appendChild(editFoodDaysPerMonthText);
 foodBackground.appendChild(editFoodDaysPerMonth);
 foodBackground.appendChild(editFoodFoodPerDayText);
 foodBackground.appendChild(editFoodFoodPerDay);
+}
+
+
+
+
+
+
+
+// loop for product container items so it appears on the div created when you press the edit icon 
+
+for(let index = 0;index < productNumberContainer.length; index++)
+{
+
+//the background div was made so all the items can be distinguished from one food to the other 
+foodBackground = document.createElement('div');
+foodBackground.setAttribute('class','foodBackground');
+
+
+
+editProductNameText = 	document.createElement('p');
+editProductNameText.textContent = 'Name: ';
+
+
+editProductName = document.createElement('input');
+editProductName.setAttribute('placeholder', productNumberContainer[index].name);
+editProductName.setAttribute('id','productN' + index );
+//all the id's in this for loop is made so the program can replace the array with the value of the placeholder changed when they press the done button 
+
+
+editProductPriceText = 	document.createElement('p');
+editProductPriceText.textContent = 'Price: ';
+
+
+editProductPrice = document.createElement('input');
+editProductPrice.setAttribute('placeholder', productNumberContainer[index].price);
+editProductPrice.setAttribute('id','productP' + index );
+
+
+
+productContainer.appendChild(foodBackground);
+foodBackground.appendChild(editProductNameText);
+foodBackground.appendChild(editProductName);
+foodBackground.appendChild(editProductPriceText);
+foodBackground.appendChild(editProductPrice);
+}
+
+
+
+for(let index = 0;index < extraNumberContainer.length; index++)
+{
+
+//the background div was made so all the items can be distinguished from one food to the other 
+foodBackground = document.createElement('div');
+foodBackground.setAttribute('class','foodBackground');
+
+
+
+
+
+editExtraPriceText = 	document.createElement('p');
+editExtraPriceText.textContent = 'Extra: ';
+
+
+editExtraPrice = document.createElement('input');
+editExtraPrice.setAttribute('placeholder', extraNumberContainer[index].price);
+editExtraPrice.setAttribute('id','extraP' + index );
+//all the id's in this for loop is made so the program can replace the array with the value of the placeholder changed when they press the done button 
+
+
+extraContainer.appendChild(foodBackground);
+foodBackground.appendChild(editExtraPriceText);
+foodBackground.appendChild(editExtraPrice);
+}
 
 exitButton.addEventListener('click', exitButtonFunction);
 editContainerDoneButton.addEventListener('click', popUpDoneButttonFunction)
-
-}
-
 
 alert('this works!');
 }

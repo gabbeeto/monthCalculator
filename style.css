@@ -239,6 +239,7 @@ box-shadow: 5px 5px 100px 40px black;
 #buttonContainer{
 display: flex;
 justify-content: center;
+padding-bottom: 10px;
 gap: 10px;
 }
 
