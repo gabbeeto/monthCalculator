@@ -38,9 +38,52 @@ let extraContainer;
 let foodBackground;
 
 
-function finishButtonFunction(){
 
+
+
+
+
+
+
+let AmountOfCalculationsToWorkOn = 0;
+
+
+function calculationToWorkOnAmount()
+{
+AmountOfCalculationsToWorkOn = 0;
+if(foodNumberContainer.length)
+{AmountOfCalculationsToWorkOn++;
+alert('foodCalculationTrue');}
+
+if(productNumberContainer.length)
+{AmountOfCalculationsToWorkOn++
+alert('productCalculationTrue');}
+
+if(extraNumberContainer.length)
+{AmountOfCalculationsToWorkOn++;
+alert('extraCalculationTrue');}
+
+}
+
+
+
+
+
+
+
+
+
+
+function finishButtonFunction(){
+calculationToWorkOnAmount();
 if(!popUpCreated)
+{
+if(AmountOfCalculationsToWorkOn == 0)
+{
+alert("You need add some calculation values before pressing the finish button");
+}
+else
+
 {
 
 let calculationPerIndex = [];
@@ -96,6 +139,10 @@ finishbuttonParagraph.innerHTML = "Result: " + Math.floor(finalCalculation) + '$
 
 
 }
+
+
+
+}
 }
 
 
@@ -127,6 +174,8 @@ let foodPerDayValue = /[0-9]+/.exec(foodPerDay.value);
 
 
 
+if(priceFoodValue && amountPerPriceValue && daysPerMonthValue && foodPerDayValue)
+{
 
 //container made for the calculation
 foodNumberContainer[foodNumberContainerIndex] = {name: nameFoodValue, price: priceFoodValue,amountPerPrice: amountPerPriceValue,daysPerMonth: daysPerMonthValue,foodPerDay: foodPerDayValue};
@@ -183,6 +232,13 @@ foodNumberContainerIndex += 1;
 
 
 }
+else
+{
+alert("you haven't filled this with proper information, don't forget to put a value in one of those input containers");
+
+}
+
+}
 
 }
 
@@ -211,6 +267,8 @@ let priceProductValue = /[0-9]+/.exec(priceProduct.value);
 
 
 
+if(priceProductValue)
+{
 
 //container made for the calculation
 productNumberContainer[productNumberContainerIndex] = {name: productNameValue, price: priceProductValue};
@@ -262,6 +320,15 @@ popUpDoneButtton.addEventListener('click', popUpDoneButttonFunction);
 productNumberContainerIndex += 1;
 
 
+}
+else
+{
+alert("you haven't filled this with proper information, don't forget to put a value in one of those input containers");
+}
+
+
+
+
 	}
 
 }
@@ -286,6 +353,8 @@ let extraMoneyValue = /[0-9]+/.exec(extraMoney.value);
 
 
 
+if(extraMoneyValue)
+{
 
 //container made for the calculation
 extraNumberContainer[extraNumberContainerIndex] = {price: extraMoneyValue};
@@ -336,6 +405,14 @@ popUpDoneButtton.addEventListener('click', popUpDoneButttonFunction);
 extraNumberContainerIndex += 1;
 
 
+}
+else
+{
+
+alert("you haven't filled this with proper information, don't forget to put a value in the only input container");
+
+}
+
 
 	}	
 
@@ -370,7 +447,14 @@ extraNumberContainerIndex += 1;
 
 
 function editButtonFunction() {
+calculationToWorkOnAmount();
 if(!popUpCreated)
+{
+if(AmountOfCalculationsToWorkOn == 0)
+{
+alert("you need to add some information value in order to edit information");
+}
+else
 {
 popUpCreated = true;
 mainContainer = document.getElementById('mainContainer');
@@ -703,16 +787,105 @@ foodBackground.appendChild(editExtraPrice);
 exitButton.addEventListener('click', exitButtonFunction);
 editContainerDoneButton.addEventListener('click', popUpDoneButttonFunction)
 
-alert('this works!');
+}
 }
 
 }
 
 
 function deleteButtonFunction(){
+calculationToWorkOnAmount();
 if(!popUpCreated)
 {
-alert('this works!');
+if(AmountOfCalculationsToWorkOn == 0)
+{
+alert("you need to add some information value in order to delete information");
+}
+else
+{
+
+
+
+
+
+deleteDiv = document.createElement('div');
+deleteDiv.setAttribute('id','deleteDiv');
+document.body.appendChild(deleteDiv);
+
+
+textFood = document.createElement('h1');
+textFood.innerHTML = "Delete Food: ";
+deleteDiv.appendChild(textFood);
+
+optionFoodDiv = document.createElement('div');
+optionFoodDiv.setAttribute("id","optionFoodDiv");
+deleteDiv.appendChild(optionFoodDiv);
+
+optionFood = document.createElement('option');
+optionFood.setAttribute("id","optionFood");
+optionFoodDiv.appendChild(optionFood);
+
+deleteFoodButton = document.createElement('button');
+optionFoodDiv.appendChild(deleteFoodButton);
+
+
+
+
+
+
+	
+
+
+
+textProduct = document.createElement('h1');
+textProduct.innerHTML = "Delete Product: ";
+deleteDiv.appendChild(textProduct);
+
+optionProductDiv = document.createElement('div');
+optionProductDiv.setAttribute("id","optionFoodDiv");
+deleteDiv.appendChild(optionProductDiv);
+
+optionProduct = document.createElement('option');
+optionProduct.setAttribute("id","optionProduct");
+optionProductDiv.appendChild(optionProduct);
+
+deleteProductButton = document.createElement('button');
+optionProductDiv.appendChild(deleteProductButton);
+
+
+
+
+
+
+
+
+
+textExtra = document.createElement('h1');
+textExtra.innerHTML = "Delete Extra Amount of Money: ";
+deleteDiv.appendChild(textExtra);
+
+
+optionExtraDiv = document.createElement('div');
+optionExtraDiv.setAttribute("id","optionExtraDiv");
+deleteDiv.appendChild(optionExtraDiv);
+
+optionExtra = document.createElement('option');
+optionExtra.setAttribute("id","optionExtra");
+optionExtraDiv.appendChild(optionExtra);
+
+
+deleteExtraButton = document.createElement('button');
+optionExtraDiv.appendChild(deleteExtraButton);
+
+	
+
+
+
+alert('this works');
+}
+
+
+
 }
 }
 
