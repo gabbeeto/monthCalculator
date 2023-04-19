@@ -817,6 +817,7 @@ deleteDiv.appendChild(closeButton);
 
 if(foodNumberContainer.length)
 {textFood = document.createElement('h1');
+textFood.setAttribute('id',"redText");
 textFood.innerHTML = "Delete Food: ";
 deleteDiv.appendChild(textFood);
 
@@ -842,11 +843,12 @@ optionFoodDiv.appendChild(deleteFoodButton);
 if(productNumberContainer.length){
 
 textProduct = document.createElement('h1');
+textProduct.setAttribute('id',"yellowText");
 textProduct.innerHTML = "Delete Product: ";
 deleteDiv.appendChild(textProduct);
 
 optionProductDiv = document.createElement('div');
-optionProductDiv.setAttribute("id","optionFoodDiv");
+optionProductDiv.setAttribute("id","optionProductDiv");
 deleteDiv.appendChild(optionProductDiv);
 
 selectProduct = document.createElement('select');
@@ -873,6 +875,7 @@ if(extraNumberContainer.length)
 
 
 textExtra = document.createElement('h1');
+textExtra.setAttribute('id',"greenText");
 textExtra.innerHTML = "Delete Extra Amount of Money: ";
 deleteDiv.appendChild(textExtra);
 

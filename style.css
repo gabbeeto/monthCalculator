@@ -123,6 +123,27 @@ background-color:  #39535E ;
 }
 
 
+#redContainer{
+background-color: #E8BAD8;
+text-stroke:1px #840D5F;
+-webkit-text-stroke:1px #840D5F;
+}
+
+
+
+#productContainer{
+background-color: #E8E3BA;
+text-stroke:1px #845F0D;
+-webkit-text-stroke:1px #845F0D;
+}
+
+
+#extraContainer{
+background-color: #BAE8DA;
+text-stroke:1px #0D8445;
+-webkit-text-stroke:1px #0D8445;
+}
+
 .warningSign {
 width: 80%;
 border: 1px solid black;
@@ -174,15 +195,16 @@ padding: 80px;
 /*Finish button from the bottom of the page*/
 
 .addButton{
+font-family: 'sherman';
+font-size: 19px;
 grid-column-start:1 ;
 grid-column-end: -1;
 align-self: center;
 justify-self: center;
 margin-top: 20px;
 border-radius: 5px;
-box-shadow: 5px 5px 10px;
+box-shadow: 5px 5px 10px black;
 width: 90%;
-background-color: #578A9F;
 border: 2px solid black;
 text-stroke: 0px;
 -webkit-text-stroke: 0px;
@@ -190,8 +212,26 @@ text-stroke: 0px;
 
 .addButton:hover{
 
-background-color: #15313D;
 cursor: pointer;
+color: white;
+}
+
+
+.redButton:hover{
+
+background-color: #3D1524;
+}
+
+
+#addButton2:hover{
+
+background-color: #3D3115;
+}
+
+
+#addButton3:hover{
+
+background-color: #153D2D;
 }
 
 
@@ -210,7 +250,6 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 font-family: 'sherman';
-background-color: #203640;
 z-index: 3;
 font-size: 3rem;
 border-radius: 10px;
@@ -218,12 +257,33 @@ border: 2px solid black;
 box-shadow: 10px 10px 550px 550px black;
 }
 
+#foodPopUp{
+background-color: #E8BAD8;
+text-stroke:1px #840D5F;
+-webkit-text-stroke:1px #840D5F;
+}
+
+
+#productPopUp{
+background-color: #E8E3BA;
+text-stroke:1px #845F0D;
+-webkit-text-stroke:1px #845F0D;
+}
+
+
+#extraPopUp{
+background-color: #BAE8DA;
+text-stroke:1px #0D8445;
+-webkit-text-stroke:1px #0D8445;
+}
+
+
+
 .popUp button {
 width: 40%;
 border: 3px solid black;
 height: 40%;
 font-size: 5rem;
-background-color: #3A6478;
 font-family: 'sherman';
 border-radius: 10px;
 text-align: center;
@@ -232,10 +292,26 @@ text-align: center;
 }
 
 .popUp:hover button {
-background-color: #1C5A78;
 cursor: pointer;
+color: white;
 }
 
+#foodPopUp:hover button{
+
+background-color: #3D1524;
+}
+
+
+#productPopUp:hover button{
+
+background-color: #3D3115;
+}
+
+
+#extraPopUp:hover button{
+
+background-color: #153D2D;
+}
 
 
 
@@ -315,13 +391,16 @@ padding: 10px 0px;
 
 /*deleteButton Section*/
 #deleteDiv{
-background-color: darkcyan;
+background-color: #8B9BB3;
 position: fixed;
 z-index: 3;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+color: black;
+text-stroke: 0px;
+-webkit-text-stroke: 0px;
 align-self: center;
 justify-self: center;
 border: 1px solid black;
@@ -332,6 +411,68 @@ padding: 20px;
 
 #closeButtonForDeleteDiv{
 align-self: end;
+}
+
+#optionFoodDiv,#optionProductDiv,#optionExtraDiv{
+display: flex;
+font-family: 'sherman';
+gap: 5px;
+}
 
 
+select{
+font-family: 'sherman';
+font-size: 22px;
+}
+
+#optionFoodDiv button,#optionProductDiv button,#optionExtraDiv button, #closeButtonForDeleteDiv{
+font-family: 'sherman';
+font-size: 22px;
+border: 1px solid black;
+border-radius: 5px;
+padding: 2px;
+}
+
+
+#optionFoodDiv:hover button,#optionProductDiv:hover button,#optionExtraDiv:hover button, #closeButtonForDeleteDiv:hover{
+cursor: pointer;
+color: white;
+}
+
+#optionFoodDiv:hover button{
+
+background-color: #3D1524;
+}
+
+
+#optionProductDiv:hover button{
+
+background-color: #3D3115;
+}
+
+
+#optionExtraDiv:hover button{
+
+background-color: #153D2D;
+}
+
+#closeButtonForDeleteDiv:hover{
+background-color:black;
+
+}
+
+#redText{
+text-stroke:1px #840D5F;
+-webkit-text-stroke:1px #840D5F;
+}
+
+#yellowText{
+text-stroke:1px #845F0D;
+-webkit-text-stroke:1px #845F0D;
+}
+
+
+#greenText{
+text-stroke:1px #0D8445;
+-webkit-text-stroke:1px #0D8445;
 }
