@@ -53,15 +53,15 @@ function calculationToWorkOnAmount()
 AmountOfCalculationsToWorkOn = 0;
 if(foodNumberContainer.length)
 {AmountOfCalculationsToWorkOn++;
-alert('foodCalculationTrue');}
+}
 
 if(productNumberContainer.length)
-{AmountOfCalculationsToWorkOn++
-alert('productCalculationTrue');}
+{AmountOfCalculationsToWorkOn++;
+}
 
 if(extraNumberContainer.length)
 {AmountOfCalculationsToWorkOn++;
-alert('extraCalculationTrue');}
+}
 
 }
 
@@ -806,14 +806,17 @@ else
 
 
 
-
-
 deleteDiv = document.createElement('div');
 deleteDiv.setAttribute('id','deleteDiv');
-document.body.appendChild(deleteDiv);
+mainContainer.appendChild(deleteDiv);
 
+closeButton = document.createElement('button');
+closeButton.setAttribute('id','closeButtonForDeleteDiv');
+closeButton.innerHTML = 'Done'
+deleteDiv.appendChild(closeButton);
 
-textFood = document.createElement('h1');
+if(foodNumberContainer.length)
+{textFood = document.createElement('h1');
 textFood.innerHTML = "Delete Food: ";
 deleteDiv.appendChild(textFood);
 
@@ -821,13 +824,14 @@ optionFoodDiv = document.createElement('div');
 optionFoodDiv.setAttribute("id","optionFoodDiv");
 deleteDiv.appendChild(optionFoodDiv);
 
-optionFood = document.createElement('option');
-optionFood.setAttribute("id","optionFood");
-optionFoodDiv.appendChild(optionFood);
+selectFood = document.createElement('select');
+selectFood.setAttribute("id","selectFood");
+optionFoodDiv.appendChild(selectFood);
 
 deleteFoodButton = document.createElement('button');
+deleteFoodButton.innerHTML = 'delete';
 optionFoodDiv.appendChild(deleteFoodButton);
-
+}
 
 
 
@@ -835,7 +839,7 @@ optionFoodDiv.appendChild(deleteFoodButton);
 
 	
 
-
+if(productNumberContainer.length){
 
 textProduct = document.createElement('h1');
 textProduct.innerHTML = "Delete Product: ";
@@ -845,19 +849,27 @@ optionProductDiv = document.createElement('div');
 optionProductDiv.setAttribute("id","optionFoodDiv");
 deleteDiv.appendChild(optionProductDiv);
 
-optionProduct = document.createElement('option');
-optionProduct.setAttribute("id","optionProduct");
-optionProductDiv.appendChild(optionProduct);
+selectProduct = document.createElement('select');
+selectProduct.setAttribute("id","SelectProduct");
+optionProductDiv.appendChild(selectProduct);
 
 deleteProductButton = document.createElement('button');
+deleteProductButton.innerHTML = 'delete';
 optionProductDiv.appendChild(deleteProductButton);
 
 
+}
 
 
 
 
 
+
+
+
+
+if(extraNumberContainer.length)
+{
 
 
 textExtra = document.createElement('h1');
@@ -869,17 +881,153 @@ optionExtraDiv = document.createElement('div');
 optionExtraDiv.setAttribute("id","optionExtraDiv");
 deleteDiv.appendChild(optionExtraDiv);
 
-optionExtra = document.createElement('option');
-optionExtra.setAttribute("id","optionExtra");
-optionExtraDiv.appendChild(optionExtra);
+selectExtra = document.createElement('select');
+selectExtra.setAttribute("id","selectExtra");
+optionExtraDiv.appendChild(selectExtra);
 
 
 deleteExtraButton = document.createElement('button');
+deleteExtraButton.innerHTML = 'delete';
 optionExtraDiv.appendChild(deleteExtraButton);
 
+
+}
 	
+for(let index = 0; index < foodNumberContainer.length; index++)
+{
+foodOption = document.createElement('option');
+foodOption.setAttribute('value', 'f' + index);
+foodOption.setAttribute('id', 'f' + index);
+foodOption.innerHTML = foodNumberContainer[index].name;
+ 
+selectFood.appendChild(foodOption);
+
+}
 
 
+for(let index = 0; index < productNumberContainer.length; index++)
+{
+productOption = document.createElement('option');
+productOption.setAttribute('value', 'p' + index);
+productOption.setAttribute('id', 'p' + index);
+productOption.innerHTML = productNumberContainer[index].name;
+ 
+selectProduct.appendChild(productOption);
+
+}
+
+
+for(let index = 0; index < extraNumberContainer.length; index++)
+{
+extraOption = document.createElement('option');
+extraOption.setAttribute('value', 'e' + index);
+extraOption.setAttribute('id', 'e' + index);
+extraOption.innerHTML = extraNumberContainer[index].price;
+ 
+selectExtra.appendChild(extraOption);
+
+}
+
+function closeButtonForDeleteDivFunction(){
+deleteDiv.parentElement.removeChild(deleteDiv);
+}
+
+
+
+
+function deleteFoodButtonFunction(){
+for(let index =0;index < foodNumberContainer.length; index++)
+{
+if(selectFood.value == 'f' + index)
+{
+foodNumberContainer.splice(index, 1);
+document.getElementById('f' + index).parentElement.removeChild(document.getElementById('f' + index));
+}
+
+}
+
+foodNumberContainerIndex = foodNumberContainer.length ;
+
+
+if(!foodNumberContainer.length)
+{
+textFood.parentElement.removeChild(textFood);
+optionFoodDiv.parentElement.removeChild(optionFoodDiv);
+}
+
+}
+
+
+
+function deleteProductButtonFunction(){
+for(let index =0;index < productNumberContainer.length; index++)
+{
+if(selectProduct.value == 'p' + index)
+{
+productNumberContainer.splice(index, 1);
+document.getElementById('p' + index).parentElement.removeChild(document.getElementById('p' + index));
+}
+
+}
+
+
+
+productNumberContainerIndex = productNumberContainer.length;
+
+
+if(!productNumberContainer.length)
+{
+textProduct.parentElement.removeChild(textProduct);
+optionProductDiv.parentElement.removeChild(optionProductDiv);
+}
+
+}
+
+
+function deleteExtraButtonFunction(){
+for(let index =0;index < extraNumberContainer.length; index++)
+{
+if(selectExtra.value == 'e' + index)
+{
+extraNumberContainer.splice(index, 1);
+document.getElementById('e' + index).parentElement.removeChild(document.getElementById('e' + index));
+}
+
+}
+
+
+extraNumberContainerIndex = extraNumberContainer.length;
+
+
+if(!extraNumberContainer.length)
+{
+textExtra.parentElement.removeChild(textExtra);
+optionExtraDiv.parentElement.removeChild(optionExtraDiv);
+}
+
+}
+
+
+
+
+
+
+closeButton.addEventListener('click',closeButtonForDeleteDivFunction);
+
+if(foodNumberContainer.length)
+{
+deleteFoodButton.addEventListener('click', deleteFoodButtonFunction);
+}
+
+if(productNumberContainer.length)
+{
+deleteProductButton.addEventListener('click', deleteProductButtonFunction);
+}
+
+if(extraNumberContainer.length)
+{
+deleteExtraButton.addEventListener('click', deleteExtraButtonFunction);
+}
 
 alert('this works');
 }
