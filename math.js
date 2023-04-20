@@ -15,6 +15,28 @@ let finishbuttonParagraph;
 let finishButtonDivCreated = false;
 
 
+
+
+let warningSign;
+let warningSignDiv;
+let warningSignImg;
+let doneButtonForTheWarningSign;
+let warningSignTextDiv;
+let foodWarningSignMessage1;
+let foodWarningSignMessage2;
+let productWarningSignMessage1;
+let productWarningSignMessage2;
+let extraWarningSignMessage1;
+let extraWarningSignMessage2;
+
+
+let editWarningSignMessage1;
+let editWarningSignMessage2;
+let finishWarningSignMessage1;
+let finishWarningSignMessage2;
+let deleteWarningSignMessage1;
+let deleteWarningSignMessage2;
+
 // the PopUpCreated Variable turns off the functionality of other functions with an if statement when it is created because it ise set to true and the if statement only allow to run the code when this variable is set to false
 let popUpCreated = false;
 
@@ -80,7 +102,57 @@ if(!popUpCreated)
 {
 if(AmountOfCalculationsToWorkOn == 0)
 {
-alert("You need add some calculation values before pressing the finish button");
+
+popUpCreated = true;
+
+warningSign = document.createElement('div');
+warningSign.setAttribute('class',"warningSign2");
+
+
+
+mainContainer = document.getElementById('mainContainer');
+mainContainer.appendChild(warningSign);
+
+
+warningSignDiv = document.createElement('div');
+warningSignDiv.setAttribute('class', 'warningSignDiv');
+warningSign.appendChild(warningSignDiv);
+
+warningSignImg = document.createElement('img');
+warningSignImg.setAttribute('src',"images/warningIcon.png");
+warningSignDiv.appendChild(warningSignImg);
+
+warningSignTextDiv = document.createElement('div');
+warningSignTextDiv.setAttribute('class', 'warningSignTextDiv');
+warningSignDiv.appendChild(warningSignTextDiv);
+
+finishWarningSignMessage1 = document.createElement('h2');
+finishWarningSignMessage1.innerHTML = "Invalid operation:";
+warningSignTextDiv.appendChild(finishWarningSignMessage1);
+
+finishWarningSignMessage2 = document.createElement('p');
+finishWarningSignMessage2.innerHTML = "You need add some calculation values before pressing the finish button";
+
+warningSignTextDiv.appendChild(finishWarningSignMessage2);
+
+
+doneButtonForTheWarningSign = document.createElement('button');
+doneButtonForTheWarningSign.innerHTML = 'Done'
+doneButtonForTheWarningSign.setAttribute('id', 'warningSingButton');
+warningSign.appendChild(doneButtonForTheWarningSign);
+
+function doneButtonForTheWarningSignFunction(){
+popUpCreated = false;
+warningSign.parentElement.removeChild(warningSign);
+}
+
+
+doneButtonForTheWarningSign.addEventListener('click', doneButtonForTheWarningSignFunction)
+
+
+
+
+
 }
 else
 
@@ -234,7 +306,53 @@ foodNumberContainerIndex += 1;
 }
 else
 {
-alert("you haven't filled this with proper information, don't forget to put a value in one of those input containers");
+
+popUpCreated = true;
+
+warningSign = document.createElement('div');
+warningSign.setAttribute('class',"warningSign2");
+warningSign.setAttribute('id','foodWarningSign');
+
+
+
+mainContainer = document.getElementById('mainContainer');
+mainContainer.appendChild(warningSign);
+
+
+warningSignDiv = document.createElement('div');
+warningSignDiv.setAttribute('class', 'warningSignDiv');
+warningSign.appendChild(warningSignDiv);
+
+warningSignImg = document.createElement('img');
+warningSignImg.setAttribute('src',"images/warningIcon.png");
+warningSignDiv.appendChild(warningSignImg);
+
+warningSignTextDiv = document.createElement('div');
+warningSignTextDiv.setAttribute('class', 'warningSignTextDiv');
+warningSignDiv.appendChild(warningSignTextDiv);
+
+foodWarningSignMessage1 = document.createElement('h2');
+foodWarningSignMessage1.innerHTML = "YOU HAVEN'T FILLED THIS WITH PROPER INFORMATION";
+warningSignTextDiv.appendChild(foodWarningSignMessage1);
+
+foodWarningSignMessage2 = document.createElement('p');
+foodWarningSignMessage2.innerHTML = "Don't forget to put a value in one of those input containers!";
+warningSignTextDiv.appendChild(foodWarningSignMessage2);
+
+
+doneButtonForTheWarningSign = document.createElement('button');
+doneButtonForTheWarningSign.innerHTML = 'Done'
+doneButtonForTheWarningSign.setAttribute('id', 'warningSingButton');
+warningSign.appendChild(doneButtonForTheWarningSign);
+
+function doneButtonForTheWarningSignFunction(){
+popUpCreated = false;
+warningSign.parentElement.removeChild(warningSign);
+}
+
+
+doneButtonForTheWarningSign.addEventListener('click', doneButtonForTheWarningSignFunction)
+
 
 }
 
@@ -323,7 +441,55 @@ productNumberContainerIndex += 1;
 }
 else
 {
-alert("you haven't filled this with proper information, don't forget to put a value in one of those input containers");
+
+popUpCreated = true;
+
+warningSign = document.createElement('div');
+warningSign.setAttribute('class',"warningSign2");
+
+
+
+mainContainer = document.getElementById('mainContainer');
+mainContainer.appendChild(warningSign);
+
+
+warningSignDiv = document.createElement('div');
+warningSignDiv.setAttribute('class', 'warningSignDiv');
+warningSign.appendChild(warningSignDiv);
+
+warningSignImg = document.createElement('img');
+warningSignImg.setAttribute('src',"images/warningIcon.png");
+warningSignDiv.appendChild(warningSignImg);
+
+warningSignTextDiv = document.createElement('div');
+warningSignTextDiv.setAttribute('class', 'warningSignTextDiv');
+warningSignDiv.appendChild(warningSignTextDiv);
+
+productWarningSignMessage1 = document.createElement('h2');
+productWarningSignMessage1.innerHTML = "YOU HAVEN'T FILLED THIS WITH PROPER INFORMATION";
+warningSignTextDiv.appendChild(productWarningSignMessage1);
+
+productWarningSignMessage2 = document.createElement('p');
+productWarningSignMessage2.innerHTML = "Don't forget to put a value in one of those input containers!";
+warningSignTextDiv.appendChild(productWarningSignMessage2);
+
+
+doneButtonForTheWarningSign = document.createElement('button');
+doneButtonForTheWarningSign.innerHTML = 'Done'
+doneButtonForTheWarningSign.setAttribute('id', 'warningSingButton');
+warningSign.appendChild(doneButtonForTheWarningSign);
+
+function doneButtonForTheWarningSignFunction(){
+popUpCreated = false;
+warningSign.parentElement.removeChild(warningSign);
+}
+
+
+doneButtonForTheWarningSign.addEventListener('click', doneButtonForTheWarningSignFunction)
+
+
+
+
 }
 
 
@@ -342,6 +508,7 @@ alert("you haven't filled this with proper information, don't forget to put a va
 
 
 function addButtonFunction3() {
+if(!popUpCreated)
 	{
 
 //get the input from the html
@@ -409,7 +576,51 @@ extraNumberContainerIndex += 1;
 else
 {
 
-alert("you haven't filled this with proper information, don't forget to put a value in the only input container");
+popUpCreated = true;
+
+warningSign = document.createElement('div');
+warningSign.setAttribute('class',"warningSign2");
+
+
+
+mainContainer = document.getElementById('mainContainer');
+mainContainer.appendChild(warningSign);
+
+
+warningSignDiv = document.createElement('div');
+warningSignDiv.setAttribute('class', 'warningSignDiv');
+warningSign.appendChild(warningSignDiv);
+
+warningSignImg = document.createElement('img');
+warningSignImg.setAttribute('src',"images/warningIcon.png");
+warningSignDiv.appendChild(warningSignImg);
+
+warningSignTextDiv = document.createElement('div');
+warningSignTextDiv.setAttribute('class', 'warningSignTextDiv');
+warningSignDiv.appendChild(warningSignTextDiv);
+
+extraWarningSignMessage1 = document.createElement('h2');
+extraWarningSignMessage1.innerHTML = "YOU HAVEN'T FILLED THIS WITH PROPER INFORMATION";
+warningSignTextDiv.appendChild(extraWarningSignMessage1);
+
+extraWarningSignMessage2 = document.createElement('p');
+extraWarningSignMessage2.innerHTML = "Don't forget to put  a value in the only input container!";
+warningSignTextDiv.appendChild(extraWarningSignMessage2);
+
+
+doneButtonForTheWarningSign = document.createElement('button');
+doneButtonForTheWarningSign.innerHTML = 'Done'
+doneButtonForTheWarningSign.setAttribute('id', 'warningSingButton');
+warningSign.appendChild(doneButtonForTheWarningSign);
+
+function doneButtonForTheWarningSignFunction(){
+popUpCreated = false;
+warningSign.parentElement.removeChild(warningSign);
+}
+
+
+doneButtonForTheWarningSign.addEventListener('click', doneButtonForTheWarningSignFunction)
+
 
 }
 
@@ -452,7 +663,55 @@ if(!popUpCreated)
 {
 if(AmountOfCalculationsToWorkOn == 0)
 {
-alert("you need to add some information value in order to edit information");
+
+popUpCreated = true;
+
+warningSign = document.createElement('div');
+warningSign.setAttribute('class',"warningSign2");
+
+
+
+mainContainer = document.getElementById('mainContainer');
+mainContainer.appendChild(warningSign);
+
+
+warningSignDiv = document.createElement('div');
+warningSignDiv.setAttribute('class', 'warningSignDiv');
+warningSign.appendChild(warningSignDiv);
+
+warningSignImg = document.createElement('img');
+warningSignImg.setAttribute('src',"images/warningIcon.png");
+warningSignDiv.appendChild(warningSignImg);
+
+warningSignTextDiv = document.createElement('div');
+warningSignTextDiv.setAttribute('class', 'warningSignTextDiv');
+warningSignDiv.appendChild(warningSignTextDiv);
+
+editWarningSignMessage1 = document.createElement('h2');
+editWarningSignMessage1.innerHTML = "Invalid operation:";
+warningSignTextDiv.appendChild(editWarningSignMessage1);
+
+editWarningSignMessage2 = document.createElement('p');
+editWarningSignMessage2.innerHTML = "you need to add some information value in order to edit information";
+
+warningSignTextDiv.appendChild(editWarningSignMessage2);
+
+
+doneButtonForTheWarningSign = document.createElement('button');
+doneButtonForTheWarningSign.innerHTML = 'Done'
+doneButtonForTheWarningSign.setAttribute('id', 'warningSingButton');
+warningSign.appendChild(doneButtonForTheWarningSign);
+
+function doneButtonForTheWarningSignFunction(){
+popUpCreated = false;
+warningSign.parentElement.removeChild(warningSign);
+}
+
+
+doneButtonForTheWarningSign.addEventListener('click', doneButtonForTheWarningSignFunction)
+
+
+
 }
 else
 {
@@ -793,13 +1052,75 @@ editContainerDoneButton.addEventListener('click', popUpDoneButttonFunction)
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function deleteButtonFunction(){
 calculationToWorkOnAmount();
 if(!popUpCreated)
 {
 if(AmountOfCalculationsToWorkOn == 0)
 {
-alert("you need to add some information value in order to delete information");
+
+
+popUpCreated = true;
+
+warningSign = document.createElement('div');
+warningSign.setAttribute('class',"warningSign2");
+
+
+
+mainContainer = document.getElementById('mainContainer');
+mainContainer.appendChild(warningSign);
+
+
+warningSignDiv = document.createElement('div');
+warningSignDiv.setAttribute('class', 'warningSignDiv');
+warningSign.appendChild(warningSignDiv);
+
+warningSignImg = document.createElement('img');
+warningSignImg.setAttribute('src',"images/warningIcon.png");
+warningSignDiv.appendChild(warningSignImg);
+
+warningSignTextDiv = document.createElement('div');
+warningSignTextDiv.setAttribute('class', 'warningSignTextDiv');
+warningSignDiv.appendChild(warningSignTextDiv);
+
+deleteWarningSignMessage1 = document.createElement('h2');
+deleteWarningSignMessage1.innerHTML = "Invalid operation:";
+warningSignTextDiv.appendChild(deleteWarningSignMessage1);
+
+deleteWarningSignMessage2 = document.createElement('p');
+deleteWarningSignMessage2.innerHTML = "you need to add some information value in order to delete information";
+
+warningSignTextDiv.appendChild(deleteWarningSignMessage2);
+
+
+doneButtonForTheWarningSign = document.createElement('button');
+doneButtonForTheWarningSign.innerHTML = 'Done'
+doneButtonForTheWarningSign.setAttribute('id', 'warningSingButton');
+warningSign.appendChild(doneButtonForTheWarningSign);
+
+function doneButtonForTheWarningSignFunction(){
+popUpCreated = false;
+warningSign.parentElement.removeChild(warningSign);
+}
+
+
+doneButtonForTheWarningSign.addEventListener('click', doneButtonForTheWarningSignFunction)
+
 }
 else
 {
@@ -1032,7 +1353,6 @@ if(extraNumberContainer.length)
 deleteExtraButton.addEventListener('click', deleteExtraButtonFunction);
 }
 
-alert('this works');
 }
 
 

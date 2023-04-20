@@ -19,9 +19,9 @@ src: url("fonts/Sherman.ttf");
 }
 
 body{
-background-color: #7D8F97;	
-text-stroke: 1px  #199EDC;
--webkit-text-stroke: 1px  #199EDC;
+background-color: #CFCFCF;	
+text-stroke: 1px  white;
+-webkit-text-stroke: 1px  white;
 font-size: 20px;
 }
 
@@ -30,7 +30,7 @@ font-size: 20px;
 
 #header{
 border-bottom: 1px solid black;
-background-color: #39535E;
+background-color: #7F878B;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -235,6 +235,57 @@ background-color: #153D2D;
 }
 
 
+/*warningSign Section*/
+.warningSign2{
+position: fixed;
+z-index: 2;
+display: flex;
+flex-direction: column;
+border: 2px solid black;
+background-color: #542B2B;
+box-shadow: 8px 8px 5px 5px black;
+border-radius: 10px;
+width: 35%;
+height: 35%;
+justify-self: center;
+justify-content: center;
+align-items: center;
+align-self: center;
+}
+
+
+.warningSignDiv{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.warningSignTextDiv{
+display: flex;
+flex-direction: column;
+
+
+}
+
+
+.warningSignDiv img{
+width: 50px;
+height: 50px;
+}
+
+.warningSign2 button{
+font-family: 'sherman';
+font-size: 35px;
+border: 1px solid black;
+border-radius: 5px;
+padding: 5px 10px;
+}
+
+.warningSign2:hover button{
+cursor:pointer;
+background-color: black;
+color: white;
+}
 /*popUp Section:*/
 
 .popUp{
@@ -254,7 +305,7 @@ z-index: 3;
 font-size: 3rem;
 border-radius: 10px;
 border: 2px solid black;
-box-shadow: 10px 10px 550px 550px black;
+box-shadow: 8px 8px 5px 5px black;
 }
 
 #foodPopUp{
