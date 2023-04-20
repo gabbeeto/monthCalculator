@@ -52,7 +52,7 @@ let popUpDoneButtton;
 let editContainer;
 let exitButton;
 let editContainerDoneButton;
-let foodContainer;
+let mainEditContainer;
 let productContainer;
 let extraContainer;
 
@@ -264,7 +264,13 @@ popUp.setAttribute('id', 'foodPopUp');
 
 
 popUpParagraph = document.createElement('p');
+if(foodNumberContainer[foodNumberContainerIndex].name)
+{
 popUpParagraph.innerHTML = foodNumberContainer[foodNumberContainerIndex].name + ' was added!.';
+}
+else{
+popUpParagraph.innerHTML =  'it was added!.';
+}
 
 popUpDoneButtton = document.createElement('button');
 popUpDoneButtton.textContent = 'DONE';
@@ -401,7 +407,13 @@ popUp.setAttribute('id', 'productPopUp');
 
 
 popUpParagraph = document.createElement('p');
+if(productNumberContainer[productNumberContainerIndex].name)
+{
 popUpParagraph.innerHTML = productNumberContainer[productNumberContainerIndex].name + ' was added!.';
+}
+else{
+popUpParagraph.innerHTML = "it was added!.";
+}
 
 popUpDoneButtton = document.createElement('button');
 popUpDoneButtton.textContent = 'DONE';
@@ -735,16 +747,8 @@ gridContainerForTheEditContainer = document.createElement('div');
 gridContainerForTheEditContainer.setAttribute('id','gridContainer');
 
 
-foodContainer = document.createElement('div');
-foodContainer.setAttribute('id','gFoodContainer');
-
-
-productContainer = document.createElement('div');
-productContainer.setAttribute('id','gProductContainer');
-
-
-extraContainer = document.createElement('div');
-extraContainer.setAttribute('id','gExtraContainer');
+mainEditContainer = document.createElement('div');
+mainEditContainer.setAttribute('id','mainEditContainer');
 
 
 
@@ -760,9 +764,7 @@ editContainer.appendChild(buttonContainer);
 buttonContainer.appendChild(exitButton);
 buttonContainer.appendChild(editContainerDoneButton);
 editContainer.appendChild(gridContainerForTheEditContainer);
-gridContainerForTheEditContainer.appendChild(foodContainer);
-gridContainerForTheEditContainer.appendChild(productContainer);
-gridContainerForTheEditContainer.appendChild(extraContainer);
+gridContainerForTheEditContainer.appendChild(mainEditContainer);
 
 
 
@@ -958,7 +960,7 @@ editFoodFoodPerDay.setAttribute('placeholder', foodNumberContainer[index].foodPe
 editFoodFoodPerDay.setAttribute('id','foodFPD' + index);
 
 
-foodContainer.appendChild(foodBackground);
+mainEditContainer.appendChild(foodBackground);
 foodBackground.appendChild(editFoodNameText);
 foodBackground.appendChild(editFoodName);
 foodBackground.appendChild(editFoodPriceText);
@@ -983,8 +985,8 @@ for(let index = 0;index < productNumberContainer.length; index++)
 {
 
 //the background div was made so all the items can be distinguished from one food to the other 
-foodBackground = document.createElement('div');
-foodBackground.setAttribute('class','foodBackground');
+productBackground = document.createElement('div');
+productBackground.setAttribute('class','productBackground');
 
 
 
@@ -1008,11 +1010,11 @@ editProductPrice.setAttribute('id','productP' + index );
 
 
 
-productContainer.appendChild(foodBackground);
-foodBackground.appendChild(editProductNameText);
-foodBackground.appendChild(editProductName);
-foodBackground.appendChild(editProductPriceText);
-foodBackground.appendChild(editProductPrice);
+mainEditContainer.appendChild(productBackground);
+productBackground.appendChild(editProductNameText);
+productBackground.appendChild(editProductName);
+productBackground.appendChild(editProductPriceText);
+productBackground.appendChild(editProductPrice);
 }
 
 
@@ -1021,8 +1023,8 @@ for(let index = 0;index < extraNumberContainer.length; index++)
 {
 
 //the background div was made so all the items can be distinguished from one food to the other 
-foodBackground = document.createElement('div');
-foodBackground.setAttribute('class','foodBackground');
+extraBackground = document.createElement('div');
+extraBackground.setAttribute('class','extraBackground');
 
 
 
@@ -1038,9 +1040,9 @@ editExtraPrice.setAttribute('id','extraP' + index );
 //all the id's in this for loop is made so the program can replace the array with the value of the placeholder changed when they press the done button 
 
 
-extraContainer.appendChild(foodBackground);
-foodBackground.appendChild(editExtraPriceText);
-foodBackground.appendChild(editExtraPrice);
+mainEditContainer.appendChild(extraBackground);
+extraBackground.appendChild(editExtraPriceText);
+extraBackground.appendChild(editExtraPrice);
 }
 
 exitButton.addEventListener('click', exitButtonFunction);

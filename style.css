@@ -281,7 +281,7 @@ border-radius: 5px;
 padding: 5px 10px;
 }
 
-.warningSign2:hover button{
+.warningSign2 button:hover{
 cursor:pointer;
 background-color: black;
 color: white;
@@ -342,24 +342,24 @@ text-align: center;
 /*z-index: 3;*/
 }
 
-.popUp:hover button {
+.popUp button:hover {
 cursor: pointer;
 color: white;
 }
 
-#foodPopUp:hover button{
+#foodPopUp button:hover{
 
 background-color: #3D1524;
 }
 
 
-#productPopUp:hover button{
+#productPopUp button:hover{
 
 background-color: #3D3115;
 }
 
 
-#extraPopUp:hover button{
+#extraPopUp button:hover{
 
 background-color: #153D2D;
 }
@@ -378,60 +378,101 @@ flex-direction: column;
 justify-self: center;
 z-index: 3;
 position: fixed;
-background-color: aquamarine;
-border: 1px solid black;
-border-radius: 10px;
+background-color: #CFCFCF;
+/*border: 3px solid black;*/
+border-radius: 12px;
 box-shadow: 5px 5px 100px 40px black;
+justify-content: center;
+align-items: center;
 }
 
 #buttonContainer{
 display: flex;
+width: 100%;
+height: 100px;
+background-color: #7F878B;
+align-items: center;
 justify-content: center;
 padding-bottom: 10px;
-gap: 10px;
+padding-top: 10px;
+border-left: 3px solid black;
+border-right: 3px solid black;
+border-top: 3px solid black;
+border-radius: 5px;
+/*gap: 10px;*/
 }
 
 
 #buttonContainer button{
-margin-top: 10px;
+/*margin-top: 10px;*/
 padding: 15px 20px;
+margin: 5px 10px;
 font-size: 20px;
 font-family: 'sherman' ;
+border: 2px solid black;
+border-radius: 10px;
+}
+
+
+#buttonContainer button:hover{
+background-color: black;
+color: white;
 }
 
 #gridContainer {
 display: grid;
-grid-template-columns: repeat(3,1fr);
+grid-template-columns: 1fr;
+position: relative;
 width:100%;
 height:100%;
+overflow: auto;
+border: 3px solid black;
+border-radius: 5px;
 }
 
 
-#gFoodContainer, #gProductContainer {
-border-right: 2px solid black;
-}
 
-
-#gFoodContainer, #gProductContainer, #gExtraContainer {
-border-top: 2px solid black;
+#mainEditContainer {
+/*border-top: 5px solid black;*/
 display: flex;
 height: 100%;
 flex-direction: column;
 align-items: center;
-overflow: auto;
 }
 
 
-.foodBackground, .productBackground, .ExtraBackground{
-background-color: darkcyan;
+.foodBackground, .productBackground, .extraBackground{
 width: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-/*height: 100%;*/
-margin-bottom: 69px;
-padding: 10px 0px;
+margin-bottom: 20px;
+border-bottom: 1px solid black;
+border-top: 1px solid black;
+padding: 5px 0px;
+}
+
+
+
+.foodBackground{
+background-color: #E8BAD8 ;
+text-stroke: 1px #840D5F;
+-webkit-text-stroke: 1px #840D5F;
+}
+
+
+.productBackground{
+background-color: #E8E3BA;
+text-stroke: 1px #845F0D;
+-webkit-text-stroke: 1px #845F0D;
+
+}
+
+.extraBackground{
+background-color: #BAE8DA;
+text-stroke:1px #845F0D;
+-webkit-text-stroke: 1px #845F0D;
 }
 
 
@@ -485,24 +526,24 @@ padding: 2px;
 }
 
 
-#optionFoodDiv:hover button,#optionProductDiv:hover button,#optionExtraDiv:hover button, #closeButtonForDeleteDiv:hover{
+#optionFoodDiv button:hover,#optionProductDiv button:hover,#optionExtraDiv button:hover, #closeButtonForDeleteDiv:hover{
 cursor: pointer;
 color: white;
 }
 
-#optionFoodDiv:hover button{
+#optionFoodDiv button:hover{
 
 background-color: #3D1524;
 }
 
 
-#optionProductDiv:hover button{
+#optionProductDiv button:hover{
 
 background-color: #3D3115;
 }
 
 
-#optionExtraDiv:hover button{
+#optionExtraDiv button:hover{
 
 background-color: #153D2D;
 }
