@@ -192,7 +192,7 @@ padding: 80px;
 }
 
 
-/*Finish button from the bottom of the page*/
+/*done button from every Container*/
 
 .addButton{
 font-family: 'sherman';
@@ -567,4 +567,286 @@ text-stroke:1px #845F0D;
 #greenText{
 text-stroke:1px #0D8445;
 -webkit-text-stroke:1px #0D8445;
+}
+
+
+
+/*horizontal resolution*/
+
+@media (max-width: 1225px) {
+
+
+html{
+font-size: 13px;
+}
+
+	
+}
+
+
+
+
+@media (max-width: 986px) {
+
+
+html{
+font-size: 12px;
+
+
+}
+
+
+}
+
+
+@media (max-width: 895px)
+{
+
+html{
+font-size: 16px;
+
+}
+
+
+#mainContainer{
+grid-template-columns:  1fr;
+grid-template-rows: 1fr 1fr;
+
+}
+
+.warningSign {
+margin-top: 10px;
+
+}
+
+
+
+#leftMenu
+{
+width: 13%;
+height: 90%;
+position: fixed;
+gap: 50px;
+background-color: gray;
+border: 3px solid black;
+border-radius: 50px;
+padding: 6px;
+}
+
+#redContainer button{
+margin-bottom: 10px;
+width: 50%;
+}
+
+
+.warningSign2{
+width:55% ;
+
+
+}
+
+
+}
+
+
+
+@media (max-width: 800px){
+#leftMenu{
+width: 12%;
+
+}
+
+}
+
+
+
+@media (max-width: 761px){
+
+.smallContainer, #rightContainer{
+justify-self: flex-end;
+}
+
+#redContainer{
+width: 85%;
+}
+
+
+#rightContainer{
+width: 86.1%;
+}
+
+	
+/*.toCenterItems{*/
+/*align-items: flex-end;*/
+/*justify-content: flex-end;*/
+/*}*/
+
+
+/*.addButton{*/
+/*align-self:flex-end;*/
+
+/*}*/
+
+}
+
+
+
+@media (max-width: 632px) {
+
+
+html{
+font-size: 13px;
+}
+
+.popUp{
+width: 60%;
+height: 40%;
+min-width: 20px;
+max-height: 20px;
+}
+
+
+	
+}
+
+
+@media (max-width: 515px) {
+
+
+html{
+font-size: 11px;
+}
+
+#leftMenu{
+padding:4px ;
+
+}
+
+	
+}
+
+
+@media (max-width: 436px) {
+
+
+html{
+font-size: 9px;
+}
+
+
+#header{
+font-size: 1.5rem;
+
+}
+
+
+#leftMenu{
+padding: 0px;
+}
+
+
+
+
+#leftMenu img{
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	box-shadow: 0px 0px 0px;
+}
+
+
+	
+}
+
+
+
+@media (max-width: 358px) {
+
+
+
+
+
+html{
+font-size: 8.2px;
+
+}
+
+
+
+
+.warningSign2{
+width:65% ;
+
+	
+}
+
+
+
+
+
+/*vertical resolution*/
+
+
+
+@media (max-height:780px) {
+
+.warningSign2{
+height:45% ;
+
+
+}
+
+
+
+.smallContainer{
+margin:4px;
+}
+
+}
+
+@media (max-height:650px) {
+.smallContainer{
+
+	
+padding: 8px;}
+
+
+#rightContainer .smallContainer{
+padding: 8px;
+}
+
+
+/*work on this later on */
+#editContainer{
+width: 20px;
+height: 20px;
+
+
+}
+
+}
+
+
+
+@media (max-height:574px) {
+
+.addButton{
+margin-top: 5px;
+
+}
+
+.warningSign{
+margin-bottom: 5px;
+}
+h2 {font-size: 1.2em;}
+
+
+.warningSign2{
+height:55% ;
+
+
+}
+
+
+
 }
