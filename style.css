@@ -1,6 +1,5 @@
 /*mainStructure*/
 
-
 * {
 margin: 0;	
 padding: 0;
@@ -26,6 +25,10 @@ font-size: 20px;
 }
 
 
+
+
+
+
 /*header Section*/
 
 #header{
@@ -36,12 +39,10 @@ justify-content: center;
 align-items: center;
 }
 
-
 #header img{
 width: 40px;
 height: 40px;
 }
-
 
 #finishButtonDiv{
 font-weight:bold ;
@@ -50,10 +51,16 @@ text-stroke:0.5px;
 margin-left: auto;
 }
 
+
+
+
+
+
+
+
 /*buttons from the left*/
 
-#leftMenu
-{
+#leftMenu{
 margin: 5px;
 display: flex;
 flex-direction: column;
@@ -65,33 +72,32 @@ border-radius: 1000px;
 box-shadow:5px 5px 20px black;
 }
 
-#finishButton:hover, #editButton:hover, #deleteButton:hover
-{
+#finishButton:hover, #editButton:hover, #deleteButton:hover{
 cursor: pointer; 
 }
 
-#finishButton:hover
-{
+#finishButton:hover{
 content: url('images/addButtonHover.png');
 }
 
-
-#editButton:hover
-{
+#editButton:hover{
 content: url('images/editButtonHover.png');
 }
 
-#deleteButton:hover
-{
+#deleteButton:hover{
 content: url('images/deleteButtonHover.png');
 }
 
 
+
+
+
+
+
+
 /*container properties*/
 
-
-#mainContainer
-{
+#mainContainer{
 font-family: "singkong";
 font-size: 1.4rem;
 height:93vh ;
@@ -99,20 +105,17 @@ display: grid;
 grid-template-columns: 70px repeat(2, 1fr);
 grid-template-rows: 1fr 30px;
 }
-.toCenterItems
-{
+
+.toCenterItems{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 }
 
-.smallContainer
-{
+.smallContainer{
 margin: 20px;
 border: 2px solid black;
-/*padding-top: 95px;*/
-/*padding-bottom: 95px;*/
 border-radius: 5px;
 display: flex;
 flex-direction: column;
@@ -122,21 +125,17 @@ box-shadow: 10px 10px 10px;
 background-color:  #39535E ;
 }
 
-
 #redContainer{
 background-color: #E8BAD8;
 text-stroke:1px #840D5F;
 -webkit-text-stroke:1px #840D5F;
 }
 
-
-
 #productContainer{
 background-color: #E8E3BA;
 text-stroke:1px #845F0D;
 -webkit-text-stroke:1px #845F0D;
 }
-
 
 #extraContainer{
 background-color: #BAE8DA;
@@ -161,9 +160,6 @@ box-shadow: 5px 5px 1px 2px;
 margin-bottom: 20px;
 }
 
-
-
-
 input {
 border: 1px solid black;
 border-radius: 5px;
@@ -178,8 +174,13 @@ border: 2px solid black;
 -webkit-text-stroke: 1px black;
 }
 
-/*the 2 container from the right side of the page*/
 
+
+
+
+
+
+/*the 2 container from the right side of the page*/
 
 #rightContainer {
 display: flex ;
@@ -190,6 +191,9 @@ justify-content: space-around;
 #productContainer, #extraContainer{
 padding: 80px;
 }
+
+
+
 
 
 /*done button from every Container*/
@@ -211,28 +215,26 @@ text-stroke: 0px;
 }
 
 .addButton:hover{
-
 cursor: pointer;
 color: white;
 }
 
-
 .redButton:hover{
-
 background-color: #3D1524;
 }
 
-
 #addButton2:hover{
-
 background-color: #3D3115;
 }
 
-
 #addButton3:hover{
-
 background-color: #153D2D;
 }
+
+
+
+
+
 
 
 /*warningSign Section*/
@@ -263,8 +265,6 @@ align-items: center;
 .warningSignTextDiv{
 display: flex;
 flex-direction: column;
-
-
 }
 
 
@@ -286,6 +286,11 @@ cursor:pointer;
 background-color: black;
 color: white;
 }
+
+
+
+
+
 /*popUp Section:*/
 
 .popUp{
@@ -314,21 +319,17 @@ text-stroke:1px #840D5F;
 -webkit-text-stroke:1px #840D5F;
 }
 
-
 #productPopUp{
 background-color: #E8E3BA;
 text-stroke:1px #845F0D;
 -webkit-text-stroke:1px #845F0D;
 }
 
-
 #extraPopUp{
 background-color: #BAE8DA;
 text-stroke:1px #0D8445;
 -webkit-text-stroke:1px #0D8445;
 }
-
-
 
 .popUp button {
 width: 40%;
@@ -338,8 +339,6 @@ font-size: 5rem;
 font-family: 'sherman';
 border-radius: 10px;
 text-align: center;
-/*position: fixed;*/
-/*z-index: 3;*/
 }
 
 .popUp button:hover {
@@ -348,21 +347,20 @@ color: white;
 }
 
 #foodPopUp button:hover{
-
 background-color: #3D1524;
 }
 
-
 #productPopUp button:hover{
-
 background-color: #3D3115;
 }
 
-
 #extraPopUp button:hover{
-
 background-color: #153D2D;
 }
+
+
+
+
 
 
 
@@ -379,7 +377,6 @@ justify-self: center;
 z-index: 3;
 position: fixed;
 background-color: #CFCFCF;
-/*border: 3px solid black;*/
 border-radius: 12px;
 box-shadow: 5px 5px 100px 40px black;
 justify-content: center;
@@ -399,12 +396,9 @@ border-left: 3px solid black;
 border-right: 3px solid black;
 border-top: 3px solid black;
 border-radius: 5px;
-/*gap: 10px;*/
 }
 
-
 #buttonContainer button{
-/*margin-top: 10px;*/
 padding: 15px 20px;
 margin: 5px 10px;
 font-size: 20px;
@@ -412,7 +406,6 @@ font-family: 'sherman' ;
 border: 2px solid black;
 border-radius: 10px;
 }
-
 
 #buttonContainer button:hover{
 background-color: black;
@@ -430,16 +423,12 @@ border: 3px solid black;
 border-radius: 5px;
 }
 
-
-
 #mainEditContainer {
-/*border-top: 5px solid black;*/
 display: flex;
 height: 100%;
 flex-direction: column;
 align-items: center;
 }
-
 
 .foodBackground, .productBackground, .extraBackground{
 width: 100%;
@@ -453,20 +442,16 @@ border-top: 1px solid black;
 padding: 5px 0px;
 }
 
-
-
 .foodBackground{
 background-color: #E8BAD8 ;
 text-stroke: 1px #840D5F;
 -webkit-text-stroke: 1px #840D5F;
 }
 
-
 .productBackground{
 background-color: #E8E3BA;
 text-stroke: 1px #845F0D;
 -webkit-text-stroke: 1px #845F0D;
-
 }
 
 .extraBackground{
@@ -476,8 +461,8 @@ text-stroke:1px #845F0D;
 }
 
 
-/*.FoodNameText{*/
-/*}*/
+
+
 
 
 
@@ -511,7 +496,6 @@ font-family: 'sherman';
 gap: 5px;
 }
 
-
 select{
 font-family: 'sherman';
 font-size: 22px;
@@ -525,32 +509,27 @@ border-radius: 5px;
 padding: 2px;
 }
 
-
 #optionFoodDiv button:hover,#optionProductDiv button:hover,#optionExtraDiv button:hover, #closeButtonForDeleteDiv:hover{
 cursor: pointer;
 color: white;
 }
 
 #optionFoodDiv button:hover{
-
 background-color: #3D1524;
 }
 
 
 #optionProductDiv button:hover{
-
 background-color: #3D3115;
 }
 
 
 #optionExtraDiv button:hover{
-
 background-color: #153D2D;
 }
 
 #closeButtonForDeleteDiv:hover{
 background-color:black;
-
 }
 
 #redText{
@@ -563,7 +542,6 @@ text-stroke:1px #845F0D;
 -webkit-text-stroke:1px #845F0D;
 }
 
-
 #greenText{
 text-stroke:1px #0D8445;
 -webkit-text-stroke:1px #0D8445;
@@ -571,55 +549,59 @@ text-stroke:1px #0D8445;
 
 
 
+
+
+
+
+
+
+
 /*horizontal resolution*/
 
 @media (max-width: 1225px) {
-
 
 html{
 font-size: 13px;
 }
 
-	
 }
+
+
+
+
+
 
 
 
 
 @media (max-width: 986px) {
 
-
 html{
 font-size: 12px;
-
+}
 
 }
 
 
-}
 
 
-@media (max-width: 895px)
-{
+
+
+
+@media (max-width: 895px){
 
 html{
 font-size: 16px;
-
 }
-
 
 #mainContainer{
 grid-template-columns:  1fr;
 grid-template-rows: 1fr 1fr;
-
 }
 
 .warningSign {
 margin-top: 10px;
-
 }
-
-
 
 #leftMenu
 {
@@ -641,12 +623,15 @@ width: 50%;
 
 .warningSign2{
 width:55% ;
-
+}
 
 }
 
 
-}
+
+
+
+
 
 
 
@@ -660,6 +645,12 @@ width: 12%;
 
 
 
+
+
+
+
+
+
 @media (max-width: 761px){
 
 .smallContainer, #rightContainer{
@@ -670,29 +661,19 @@ justify-self: flex-end;
 width: 85%;
 }
 
-
 #rightContainer{
 width: 86.1%;
 }
 
-	
-/*.toCenterItems{*/
-/*align-items: flex-end;*/
-/*justify-content: flex-end;*/
-/*}*/
-
-
-/*.addButton{*/
-/*align-self:flex-end;*/
-
-/*}*/
-
 }
 
 
 
-@media (max-width: 632px) {
 
+
+
+
+@media (max-width: 632px) {
 
 html{
 font-size: 13px;
@@ -705,13 +686,18 @@ min-width: 20px;
 max-height: 20px;
 }
 
-
-	
 }
 
 
-@media (max-width: 515px) {
 
+
+
+
+
+
+
+
+@media (max-width: 515px) {
 
 html{
 font-size: 11px;
@@ -726,26 +712,28 @@ padding:4px ;
 }
 
 
-@media (max-width: 436px) {
 
+
+
+
+
+
+
+
+
+@media (max-width: 436px) {
 
 html{
 font-size: 9px;
 }
 
-
 #header{
 font-size: 1.5rem;
-
 }
-
 
 #leftMenu{
 padding: 0px;
 }
-
-
-
 
 #leftMenu img{
 	width: 100%;
@@ -754,31 +742,44 @@ padding: 0px;
 	box-shadow: 0px 0px 0px;
 }
 
-
-	
 }
+
+
+
+
+
+
 
 
 
 @media (max-width: 358px) {
 
-
-
-
-
 html{
 font-size: 8.2px;
-
 }
-
-
-
 
 .warningSign2{
 width:65% ;
-
-	
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -786,17 +787,11 @@ width:65% ;
 
 /*vertical resolution*/
 
-
-
 @media (max-height:780px) {
 
 .warningSign2{
 height:45% ;
-
-
 }
-
-
 
 .smallContainer{
 margin:4px;
@@ -804,27 +799,30 @@ margin:4px;
 
 }
 
+
+
+
+
+
+
+
 @media (max-height:650px) {
+
 .smallContainer{
-
-	
 padding: 8px;}
-
 
 #rightContainer .smallContainer{
 padding: 8px;
 }
 
-
-/*work on this later on */
 #editContainer{
-width: 20px;
-height: 20px;
-
-
+height: 520px;
 }
 
 }
+
+
+
 
 
 
@@ -832,21 +830,86 @@ height: 20px;
 
 .addButton{
 margin-top: 5px;
-
 }
 
-.warningSign{
-margin-bottom: 5px;
-}
-h2 {font-size: 1.2em;}
 
+h2{
+font-size: 1.2em;
+}
 
 .warningSign2{
 height:55% ;
+}
 
+#editContainer{
+height: 400px;
+}
+
+
+
+
+.warningSign{
+box-shadow: 0px 0px;
+padding-top: 0.5px;
+padding-bottom: 0px;
+width: 99.99%;
+margin-right: 0.5px;
+margin-top: 0px;
+margin-bottom: 0px;
+font-size: 15px;
+}
+
+.toCenterItems h2{
+font-size: 20px;
+}
+
+.toCenterItems h3{
+font-size: 16px;
+}
 
 }
 
 
+
+
+
+
+
+
+
+@media (max-height:482px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-height:456px) {
+
+#editContainer{
+height: 300px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-height:369px) {
+
+#editContainer{
+height: 200px;
+}
 
 }

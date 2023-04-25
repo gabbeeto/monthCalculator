@@ -15,8 +15,6 @@ let finishbuttonParagraph;
 let finishButtonDivCreated = false;
 
 
-
-
 let warningSign;
 let warningSignDiv;
 let warningSignImg;
@@ -48,7 +46,6 @@ let popUpParagraph;
 
 let popUpDoneButtton;
 
-
 let editContainer;
 let exitButton;
 let editContainerDoneButton;
@@ -56,33 +53,27 @@ let mainEditContainer;
 let productContainer;
 let extraContainer;
 
-
 let foodBackground;
-
-
-
-
-
-
-
-
 
 let AmountOfCalculationsToWorkOn = 0;
 
 
-function calculationToWorkOnAmount()
-{
+
+
+
+
+function calculationToWorkOnAmount(){
 AmountOfCalculationsToWorkOn = 0;
-if(foodNumberContainer.length)
-{AmountOfCalculationsToWorkOn++;
+if(foodNumberContainer.length){
+AmountOfCalculationsToWorkOn++;
 }
 
-if(productNumberContainer.length)
-{AmountOfCalculationsToWorkOn++;
+if(productNumberContainer.length){
+AmountOfCalculationsToWorkOn++;
 }
 
-if(extraNumberContainer.length)
-{AmountOfCalculationsToWorkOn++;
+if(extraNumberContainer.length){
+AmountOfCalculationsToWorkOn++;
 }
 
 }
@@ -108,10 +99,10 @@ popUpCreated = true;
 warningSign = document.createElement('div');
 warningSign.setAttribute('class',"warningSign2");
 
-
-
 mainContainer = document.getElementById('mainContainer');
 mainContainer.appendChild(warningSign);
+
+
 
 
 warningSignDiv = document.createElement('div');
@@ -121,6 +112,8 @@ warningSign.appendChild(warningSignDiv);
 warningSignImg = document.createElement('img');
 warningSignImg.setAttribute('src',"images/warningIcon.png");
 warningSignDiv.appendChild(warningSignImg);
+
+
 
 warningSignTextDiv = document.createElement('div');
 warningSignTextDiv.setAttribute('class', 'warningSignTextDiv');
@@ -132,8 +125,9 @@ warningSignTextDiv.appendChild(finishWarningSignMessage1);
 
 finishWarningSignMessage2 = document.createElement('p');
 finishWarningSignMessage2.innerHTML = "You need add some calculation values before pressing the finish button";
-
 warningSignTextDiv.appendChild(finishWarningSignMessage2);
+
+
 
 
 doneButtonForTheWarningSign = document.createElement('button');
@@ -141,23 +135,18 @@ doneButtonForTheWarningSign.innerHTML = 'Done'
 doneButtonForTheWarningSign.setAttribute('id', 'warningSingButton');
 warningSign.appendChild(doneButtonForTheWarningSign);
 
+
 function doneButtonForTheWarningSignFunction(){
 popUpCreated = false;
 warningSign.parentElement.removeChild(warningSign);
 }
 
-
 doneButtonForTheWarningSign.addEventListener('click', doneButtonForTheWarningSignFunction)
 
-
-
-
-
 }
-else
 
-{
 
+else{
 let calculationPerIndex = [];
 let finalCalculation = 0;
 let finalCalculation1 = 0;
@@ -166,22 +155,20 @@ let finalCalculation3 = 0;
 
 //makes the calculation for the page when you press the finish button
 for(let index = 0; index < foodNumberContainerIndex; index++){
-calculationPerIndex[index] = Number(foodNumberContainer[index].price) / Number(foodNumberContainer[index].amountPerPrice) * Number(foodNumberContainer[index].daysPerMonth) * Number(foodNumberContainer[index].foodPerDay);
+calculationPerIndex[index] = +foodNumberContainer[index].price / +foodNumberContainer[index].amountPerPrice * +foodNumberContainer[index].daysPerMonth * +foodNumberContainer[index].foodPerDay;
 finalCalculation1 = finalCalculation1 + calculationPerIndex[index];
 }
 
-
 for(let index = 0; index < productNumberContainerIndex; index++){
-finalCalculation2 = finalCalculation2 + Number(productNumberContainer[index].price);
+finalCalculation2 = finalCalculation2 + +productNumberContainer[index].price;
 }
-
 
 for(let index = 0; index < extraNumberContainerIndex; index++){
-finalCalculation3 = finalCalculation3 + Number(extraNumberContainer[index].price);
+finalCalculation3 = finalCalculation3 + +extraNumberContainer[index].price;
 }
 
 
-finalCalculation = Number(finalCalculation) + Number(finalCalculation1) + Number(finalCalculation2) + Number(finalCalculation3);
+finalCalculation = finalCalculation + finalCalculation1 + finalCalculation2 + finalCalculation3;
 
 //checks if the button is created so it doesn't make the same div twice
 
@@ -193,7 +180,7 @@ finishButtonDiv.setAttribute('id', 'finishButtonDiv');
 htmlHeader.appendChild(finishButtonDiv);
 
 finishbuttonParagraph = document.createElement('p');
-finishbuttonParagraph.innerHTML = "Result: " + Math.floor(finalCalculation) + '$';
+finishbuttonParagraph.innerHTML = "On average, you're going to spend: " + finalCalculation.toFixed(2) + '$';
 
 finishButtonDiv.appendChild(finishbuttonParagraph);
 
@@ -205,7 +192,7 @@ finishButtonDivCreated = true;
 
 else{
 //it just edits the paragraph that it's inside the div when someone press the finish button twice
-finishbuttonParagraph.innerHTML = "Result: " + Math.floor(finalCalculation) + '$';
+finishbuttonParagraph.innerHTML = "On average, you're going to spend : " + finalCalculation.toFixed(2) + '$';
 }
 
 
