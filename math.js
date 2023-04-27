@@ -180,7 +180,7 @@ finishButtonDiv.setAttribute('id', 'finishButtonDiv');
 htmlHeader.appendChild(finishButtonDiv);
 
 finishbuttonParagraph = document.createElement('p');
-finishbuttonParagraph.innerHTML = "On average, you're going to spend: " + finalCalculation.toFixed(2) + '$';
+finishbuttonParagraph.innerHTML = "Result: " + finalCalculation.toFixed(2) + '$';
 
 finishButtonDiv.appendChild(finishbuttonParagraph);
 
@@ -192,7 +192,7 @@ finishButtonDivCreated = true;
 
 else{
 //it just edits the paragraph that it's inside the div when someone press the finish button twice
-finishbuttonParagraph.innerHTML = "On average, you're going to spend : " + finalCalculation.toFixed(2) + '$';
+finishbuttonParagraph.innerHTML = "Result: " + finalCalculation.toFixed(2) + '$';
 }
 
 
